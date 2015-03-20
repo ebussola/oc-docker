@@ -8,11 +8,13 @@ scripts by yourself to your needs.
 Drop the folder "docker" inside your root October application.
 
 Edit the file _variables.sh to match your needs.
+**NOTE for project name** : use only lowercase, no hyphens, no spaces and no special chars
 
 ### Configure your database.php file to access your mysql container
  Use these values for your mysql configuration:
  
  * host: env('\<YOUR_UPPERCASE_PROJECT_NAME\>_MYSQL_PORT_3306_TCP_ADDR')
+ * database: \<your_project_name\>
  * user: 'root'
  * password: ''
  
