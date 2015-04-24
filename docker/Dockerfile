@@ -19,6 +19,9 @@ RUN echo "date.timezone = America/Sao_Paulo" > /etc/php5/mods-available/timezone
 RUN echo "intl.default_locale = pt_BR" >> /etc/php5/mods-available/intl.ini
 RUN php5enmod xdebug && php5enmod timezone
 
+# Install phpunit
+RUN wget https://phar.phpunit.de/phpunit.phar && chmod +x phpunit.phar && mv phpunit.phar /usr/local/bin/phpunit
+
 RUN a2enmod php5
 RUN a2enmod rewrite
 ADD apache-site-default.conf /etc/apache2/sites-available/default
